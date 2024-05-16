@@ -197,10 +197,10 @@ input, select, textarea {
 		}
 
 			h1.major:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: -moz-linear-gradient(to right, #8b8b8b, #8b8b8b);
+				background-image: -webkit-linear-gradient(to right, #8b8b8b, #8b8b8b);
+				background-image: -ms-linear-gradient(to right, #8b8b8b, #8b8b8b);
+				background-image: linear-gradient(to right, #8b8b8b, #8b8b8b);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -2444,7 +2444,7 @@ input, select, textarea {
 		input[type="radio"]:checked + label:before {
 			background: #ffffff;
 			border-color: #ffffff;
-			color: #b74e91;
+			color: #cdd9d9;
 			content: '\f00c';
 		}
 
@@ -2536,7 +2536,7 @@ input, select, textarea {
 			}
 
 				.wrapper.style1 .icon.major:before {
-					color: #5e42a6;
+					color: #8b8282;
 				}
 
 				.wrapper.style1-alt .icon.major:before {
@@ -3236,27 +3236,27 @@ input, select, textarea {
 			}
 
 		.wrapper.alt {
-			background-color: #261c3e;
+			background-color: #9275cb;
 		}
 
 		.wrapper.style1 {
-			background-color: #5e42a6;
+			background-color: #9275cb;
 		}
 
 		.wrapper.style1-alt {
-			background-color: #493382;
+			background-color: #49338;
 		}
 
 		.wrapper.style2 {
-			background-color: #5052b5;
+			background-color: #9275cb;
 		}
 
 		.wrapper.style2-alt {
-			background-color: #3e4094;
+			background-color: #9275cb;
 		}
 
 		.wrapper.style3 {
-			background-color: #b74e91;
+			background-color: #d392bc;
 		}
 
 		.wrapper.style3-alt {
@@ -3370,7 +3370,7 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #5e42a6;
+		background-color: #8b8282;
 		cursor: default;
 		padding: 1.75em 2em;
 	}
@@ -3765,10 +3765,10 @@ input, select, textarea {
 			}
 
 			#sidebar nav a:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: -moz-linear-gradient(to right, #8b8b8b, #8b8b8b);
+				background-image: -webkit-linear-gradient(to right, #8b8b8b, #8b8b8b);
+				background-image: -ms-linear-gradient(to right, #8b8b8b, #8b8b8b);
+				background-image: linear-gradient(to right, #8b8b8b, #8b8b8b);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
