@@ -85,94 +85,130 @@
 				<!-- Two -->
 				<body>
 					<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>Finance Quiz</h2>
-							<p>Quiz that produces an evaluation of your personal finance.</p>
-							<div class="features">
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>What is your income?</h3>
-									<br>
-									<input type="radio" id="high_income" name="income" value="Less than 30k">
-									<label for="high_income">Less than 30,000</label><br>
-									<input type="radio" id="low_income" name="income" value="low">
-									<label for="low_income">30,001 - 65,000</label><br>
-									<input type="radio" id="high_income" name="income" value="Less than 30k">
-									<label for="high_income">65,001 - 100,000</label><br>
-									<input type="radio" id="high_income" name="income" value="Less than 30k">
-									<label for="high_income">More 100,001</label>
-								</section>
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>What is your estimated Credit Score Range?</h3>
-									<br>
-									<input type="radio" id="high_income" name="income" value="Less than 30k">
-									<label for="high_income">300 - 579</label><br>
-									<input type="radio" id="low_income" name="income" value="low">
-									<label for="low_income">580 - 669</label><br>
-									<input type="radio" id="high_income" name="income" value="Less than 30k">
-									<label for="high_income">670 - 739</label><br>
-									<input type="radio" id="high_income" name="income" value="Less than 30k">
-									<label for="high_income">740 - 799</label>
-								</section>
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>How many dependents?</h3>
-									<br>
-									<input type="radio" id="high_income" name="income" value="Less than 30k">
-									<label for="high_income">More than 4</label><br>
-									<input type="radio" id="low_income" name="income" value="low">
-									<label for="low_income">3 - 4</label><br>
-									<input type="radio" id="high_income" name="income" value="Less than 30k">
-									<label for="high_income">1 - 2</label><br>
-									<input type="radio" id="high_income" name="income" value="Less than 30k">
-									<label for="high_income">0</label>
-								</section>
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>What are your monthly expenses?</h3>
-									<br>
-									<input type="radio" id="high_income" name="income" value="Less than 30k">
-									<label for="high_income">Above 8,000</label><br>
-									<input type="radio" id="low_income" name="income" value="low">
-									<label for="low_income">6,001 - 8,000</label><br>
-									<input type="radio" id="high_income" name="income" value="Less than 30k">
-									<label for="high_income">4,001 - 6,000 </label><br>
-									<input type="radio" id="high_income" name="income" value="Less than 30k">
-									<label for="high_income">0 - 4,000</label>
-								</section>
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>What is your employment status?</h3>
-									<br>
-									<input type="radio" id="high_income" name="income" value="Less than 30k">
-									<label for="high_income">Unemployed with no financial assistance</label><br>
-									<input type="radio" id="low_income" name="income" value="low">
-									<label for="low_income">Unemployed with financial assistance/seeking employment</label><br>
-									<input type="radio" id="high_income" name="income" value="Less than 30k">
-									<label for="high_income">Part-time employed</label><br>
-									<input type="radio" id="high_income" name="income" value="Less than 30k">
-									<label for="high_income">Employed full-time</label>
-								</section>
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>What is the value of your assets?</h3>
-									<br>
-									<input type="radio" id="high_income" name="income" value="Less than 30k">
-									<label for="high_income">No assets</label><br>
-									<input type="radio" id="low_income" name="income" value="low">
-									<label for="low_income">0 - 200,000</label><br>
-									<input type="radio" id="high_income" name="income" value="Less than 30k">
-									<label for="high_income">200,001 - 500,000</label><br>
-									<input type="radio" id="high_income" name="income" value="Less than 30k">
-									<label for="high_income">500,001 and above</label>
-								</section>
-							</div>
-							<form action="/submit" method="post">
-								<input type="submit" value="Submit">
-							</form>
-							</div>
-					</section>
+					<div class="inner">
+						<title>Finance Quiz</title>
+					<style>
+						body {
+							background-color: #333;
+							color: white;
+							font-family: Arial, sans-serif;
+						}
+						label {
+							color: white;
+						}
+						.result {
+							margin-top: 20px;
+							padding: 10px;
+							border: 1px solid white;
+							display: none;
+						}
+						.features {
+							margin-bottom: 20px;
+						}
+					</style>
+				</head>
+				<body>
+    <section id="two" class="wrapper style3 fade-up">
+        <div class="inner">
+            <h2>Finance Quiz</h2>
+            <p>Quiz that produces an evaluation of your personal finance.</p>
+            <div class="features">
+                <form id="quizForm">
+                    <section>
+                        <span class="icon major fa-gem"></span>
+                        <h3>What is your income?</h3>
+                        <input type="radio" id="income1" name="income" value="Less than 30,000">
+                        <label for="income1">Less than 30,000</label><br>
+                        <input type="radio" id="income2" name="income" value="30,001 - 65,000">
+                        <label for="income2">30,001 - 65,000</label><br>
+                        <input type="radio" id="income3" name="income" value="65,001 - 100,000">
+                        <label for="income3">65,001 - 100,000</label><br>
+                        <input type="radio" id="income4" name="income" value="More than 100,001">
+                        <label for="income4">More than 100,001</label>
+                    </section>
+                    <section>
+                        <span class="icon major fa-gem"></span>
+                        <h3>What is your estimated Credit Score Range?</h3>
+                        <input type="radio" id="credit1" name="credit" value="300 - 579">
+                        <label for="credit1">300 - 579</label><br>
+                        <input type="radio" id="credit2" name="credit" value="580 - 669">
+                        <label for="credit2">580 - 669</label><br>
+                        <input type="radio" id="credit3" name="credit" value="670 - 739">
+                        <label for="credit3">670 - 739</label><br>
+                        <input type="radio" id="credit4" name="credit" value="740 - 799">
+                        <label for="credit4">740 - 799</label>
+                    </section>
+                    <section>
+                        <span class="icon major fa-gem"></span>
+                        <h3>How many dependents?</h3>
+                        <input type="radio" id="dependents1" name="dependents" value="More than 4">
+                        <label for="dependents1">More than 4</label><br>
+                        <input type="radio" id="dependents2" name="dependents" value="3 - 4">
+                        <label for="dependents2">3 - 4</label><br>
+                        <input type="radio" id="dependents3" name="dependents" value="1 - 2">
+                        <label for="dependents3">1 - 2</label><br>
+                        <input type="radio" id="dependents4" name="dependents" value="0">
+                        <label for="dependents4">0</label>
+                    </section>
+                    <section>
+                        <span class="icon major fa-gem"></span>
+                        <h3>What are your monthly expenses?</h3>
+                        <input type="radio" id="expenses1" name="expenses" value="Above 8,000">
+                        <label for="expenses1">Above 8,000</label><br>
+                        <input type="radio" id="expenses2" name="expenses" value="6,001 - 8,000">
+                        <label for="expenses2">6,001 - 8,000</label><br>
+                        <input type="radio" id="expenses3" name="expenses" value="4,001 - 6,000">
+                        <label for="expenses3">4,001 - 6,000</label><br>
+                        <input type="radio" id="expenses4" name="expenses" value="0 - 4,000">
+                        <label for="expenses4">0 - 4,000</label>
+                    </section>
+                    <section>
+                        <span class="icon major fa-gem"></span>
+                        <h3>What is your employment status?</h3>
+                        <input type="radio" id="employment1" name="employment" value="Unemployed with no financial assistance">
+                        <label for="employment1">Unemployed with no financial assistance</label><br>
+                        <input type="radio" id="employment2" name="employment" value="Unemployed with financial assistance/seeking employment">
+                        <label for="employment2">Unemployed with financial assistance/seeking employment</label><br>
+                        <input type="radio" id="employment3" name="employment" value="Part-time employed">
+                        <label for="employment3">Part-time employed</label><br>
+                        <input type="radio" id="employment4" name="employment" value="Employed full-time">
+                        <label for="employment4">Employed full-time</label>
+                    </section>
+                    <section>
+                        <span class="icon major fa-gem"></span>
+                        <h3>What is the value of your assets?</h3>
+                        <input type="radio" id="assets1" name="assets" value="No assets">
+                        <label for="assets1">No assets</label><br>
+                        <input type="radio" id="assets2" name="assets" value="0 - 200,000">
+                        <label for="assets2">0 - 200,000</label><br>
+                        <input type="radio" id="assets3" name="assets" value="200,001 - 500,000">
+                        <label for="assets3">200,001 - 500,000</label><br>
+                        <input type="radio" id="assets4" name="assets" value="500,001 and above">
+                        <label for="assets4">500,001 and above</label>
+					
+                    </section>
+					<br>
+					<br>
+                    <input type="button" value="Submit" onclick="submitQuiz()">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function submitQuiz() {
+            const formData = new FormData(document.getElementById('quizForm'));
+            const results = {};
+            formData.forEach((value, key) => {
+                results[key] = value;
+            });
+
+            const params = new URLSearchParams(results);
+            window.location.href = 'results.html?' + params.toString();
+        }
+    </script>
+</body>
+</section>
 					
 				<!-- Three -->
 					<section id="three" class="wrapper style1 fade-up">

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <style>
+        .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        margin-top: 20px;
+        }
+        body {
+            background-color: #d392bc;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+		    font-size: 14pt;
+		    font-weight: normal;
+		    line-height: 1.75;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .inner {
+            width: 100%;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .result {
+            font-size: 12pt;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+        .summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .advice {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid white;
+            background-color: #c672a1;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <section id="results" class="wrapper style3 fade-up">
+        <div class="inner">
+            <h2>Quiz Results</h2>
+            <div id="resultContent" class="result"></div>
+            <div id="financialStability" class="summary"></div>
+            <div id="advice" class="advice"></div>
+        </div>
+        <a href="#" class="image"><img src="images/Women-in-FinTech.jpg" alt="" class="center"/></a>
+    </section>
+
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            const results = {};
+            for (const [key, value] of params.entries()) {
+                results[key] = value;
+            }
+            return results;
+        }
+
+        function calculateFinancialStability(results) {
+            let score = 0;
+
+            // Scoring based on income
+            switch(results.income) {
+                case "Less than 30k":
+                    score += 1;
+                    break;
+                case "30,001 - 65,000":
+                    score += 2;
+                    break;
+                case "65,001 - 100,000":
+                    score += 3;
+                    break;
+                case "More than 100,001":
+                    score += 4;
+                    break;
+            }
+
+            // Scoring based on credit score
+            switch(results.credit) {
+                case "300 - 579":
+                    score += 1;
+                    break;
+                case "580 - 669":
+                    score += 2;
+                    break;
+                case "670 - 739":
+                    score += 3;
+                    break;
+                case "740 - 799":
+                    score += 4;
+                    break;
+            }
+
+            // Scoring based on dependents
+            switch(results.dependents) {
+                case "More than 4":
+                    score += 1;
+                    break;
+                case "3 - 4":
+                    score += 2;
+                    break;
+                case "1 - 2":
+                    score += 3;
+                    break;
+                case "0":
+                    score += 4;
+                    break;
+            }
+
+            // Scoring based on expenses
+            switch(results.expenses) {
+                case "Above 8,000":
+                    score += 1;
+                    break;
+                case "6,001 - 8,000":
+                    score += 2;
+                    break;
+                case "4,001 - 6,000":
+                    score += 3;
+                    break;
+                case "0 - 4,000":
+                    score += 4;
+                    break;
+            }
+
+            // Scoring based on employment status
+            switch(results.employment) {
+                case "Unemployed with no financial assistance":
+                    score += 1;
+                    break;
+                case "Unemployed with financial assistance/seeking employment":
+                    score += 2;
+                    break;
+                case "Part-time employed":
+                    score += 3;
+                    break;
+                case "Employed full-time":
+                    score += 4;
+                    break;
+            }
+
+            // Scoring based on assets
+            switch(results.assets) {
+                case "No assets":
+                    score += 1;
+                    break;
+                case "0 - 200,000":
+                    score += 2;
+                    break;
+                case "200,001 - 500,000":
+                    score += 3;
+                    break;
+                case "500,001 and above":
+                    score += 4;
+                    break;
+            }
+
+            return score;
+        }
+
+        function getFinancialStability(score) {
+            if (score <= 6) {
+                return { level: "Room for Improvment", advice: "Your financial stability could be improved. Consider creating a budget to manage expenses, building an emergency fund, and seeking advice from a financial advisor." };
+            }  else if (score <= 12) {
+                return { level: "Can Improve", advice: "Your financial stability is well but could be improved. You are on the right track but could benefit from reducing debt, improving your credit score, and increasing your savings." };
+            }  else if (score <= 18) {
+                return { level: "Good", advice: "Your financial stability is good here are tips to continue growth: Keep up the good work! Continue to save, invest wisely, and plan for long-term financial goals." };
+            }  else {
+                return { level: "Great", advice: "Your financial stability is great! Keep up the good work! Continue to save, invest wisely, and plan for long-term financial goals." };
+            }
+        }
+
+        function displayResults() {
+            const results = getQueryParams();
+            let evaluation = '';
+
+            // Construct the evaluation summary
+            if (results.income) {
+                evaluation += `Your income is ${results.income}. `;
+            }
+            if (results.credit) {
+                evaluation += `Your estimated credit score range is ${results.credit}. `;
+            }
+            if (results.dependents) {
+                evaluation += `You have ${results.dependents} dependents. `;
+            }
+            if (results.expenses) {
+                evaluation += `Your monthly expenses are ${results.expenses}. `;
+            }
+            if (results.employment) {
+                evaluation += `Your employment status is ${results.employment}. `;
+            }
+            if (results.assets) {
+                evaluation += `The value of your assets is ${results.assets}. `;
+            }
+
+            document.getElementById('resultContent').textContent = evaluation;
+
+            // Calculate and display financial stability
+            const score = calculateFinancialStability(results);
+            const stability = getFinancialStability(score);
+            document.getElementById('financialStability').textContent = `Your financial stability is: ${stability.level}`;
+            document.getElementById('advice').textContent = `Advice: ${stability.advice}`;
+        }
+
+        window.onload = displayResults;
+        
+    </script>
+
+</body>
+</html>
