@@ -2867,7 +2867,7 @@ input, select, textarea {
 	}
 
 	header p {
-		color: rgba(255, 255, 255, 0.35);
+		color: #9275cb;
 		position: relative;
 		margin: 0 0 1.5em 0;
 	}
@@ -3370,7 +3370,7 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #8b8282;
+		background-color: #9275cb;
 		cursor: default;
 		padding: 1.75em 2em;
 	}
