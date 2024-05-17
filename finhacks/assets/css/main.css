@@ -112,6 +112,58 @@ input, select, textarea {
 			transition: none !important;
 		}
 
+
+/* Styling for generic.html retirementpage */
+/* Styling for paragraphs */
+p {
+    margin-bottom: 1em;
+    line-height: 1.6;
+}
+
+/* Styling for subbullet group */
+.subbulletgrp {
+    padding: 1em;
+	padding-left: 4em;
+    margin-bottom: 1em;
+}
+
+/* Styling for subbullets */
+.subbullet {
+	font-size: 18px;
+    position: relative;
+    margin-left: 2em; /* Indent subbullet points */
+    margin-bottom: 0.5em;
+}
+
+a {
+	font-style: italic;
+}
+
+.bullet{
+	font-size: 18px;
+	color: #ffffffb2; /* Bullet point color */ 
+	padding-left: 2em;
+}
+
+.bullet::before {
+    content: "•"; /* Use a bullet point symbol */
+    position: relative;
+    left: -1.2em; /* Position the bullet point to the left of the text */
+    color: #ffffffb2; /* Bullet point color */
+    font-size: 1.4em; /* Bullet point size */
+    line-height: 1; /* Align the bullet point with the text */
+}
+
+.subbullet::before {
+    content: "•"; /* Use a bullet point symbol */
+    position: absolute;
+    left: -1.5em; /* Position the bullet point to the left of the text */
+    color: #ffffffb2; /* Bullet point color */
+    font-size: 1.4em; /* Bullet point size */
+    line-height: 1; /* Align the bullet point with the text */
+}
+/* end styling for retirement page */
+
 /* Type */
 
 	body, input, select, textarea {
