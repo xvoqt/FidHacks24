@@ -32,6 +32,11 @@
 
 	// Forms.
 
+
+	document.getElementById('meet').addEventListener('click', function() {
+		window.open('https://calendly.com/lchen45/care-plan-counselling');
+	});
+
 		// Hack: Activate non-input submits.
 			$('form').on('click', '.submit', function(event) {
 
